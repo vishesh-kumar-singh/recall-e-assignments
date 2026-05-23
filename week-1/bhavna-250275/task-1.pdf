@@ -1,0 +1,16 @@
+1.Formulating your world as MDP:
+a.Design an MDP: Choose a simple daily scenario(e.g.,deciding whether to study, sleep, hangout;
+or navigating between specific campus buildings).Formally define the State space(S), Action space
+(A),Transition probabilities (P),and Rewards(R).
+b.Manual Calculation:For a highly simplified 3-state version of your scenario, perform Value Iteration
+by hand for exactly two steps ,assuring a discount factor Y=0.9.
+
+2.The Epsilon-Decay Challenge:
+a.Implementation: Implement tabular Q-learning on the CliffWalking-v0 environment in Gymnasium .
+b. Experimentation:Train three separate agents, each using a different exploration strategy:
+  i.Constant high exploration(E=0.5).
+  ii.Constant low exploration (E=0.05).
+  iii.Decaying exploration(start at E=1.0 and decay linearly or exponentially to 0.01).
+c. Analysis: Plot the sum of rewards per episode for all three agents on a single graph. Which agent 
+   learns a safe path the fastest? Which one ultimately finds the most optimal path, and why is 
+   there a difference?  
