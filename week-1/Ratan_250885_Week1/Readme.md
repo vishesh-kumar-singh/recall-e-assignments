@@ -10,7 +10,7 @@ And in the final graph we see that after all 3 have stabilized red is consistenl
 
 This is exactly what was to be expected as a model with 0.5 exploration would be unable to explore areas closer to the goal preferably as majority(or half) of their actions are random,but it is also expected that given enough time they would be able to properly map and find the optimum route,wheras a constant exploration of 0.05 might be able to make quick and steady progress and find a safe path early on , it will not be able to stray away from its first path due to low exploration tendency,whereas black balances the two aspects and finds a semi optimal solution(oscillating between best and second best) while also finding it relatively quickly.
 
-![alt text](Result1.png)
-![alt text](Result2.png)
-![alt text](Result3.png)
-![alt text](Result4.png)
+![alt text](Q2/Result1.png)
+![alt text](Q2/Result2.png)
+![alt text](Q2/Result3.png)
+![alt text](Q2/Result4.png)
