@@ -1,26 +1,139 @@
-# Recall-E Assignments
-#### Official repository for assignment submission for the summer project Recall-E offered by Brain and Cognitive Science Club, IIT Kanpur
-
-### Instructions for starting:
-1. Fork this repository into your own GitHub account.
-2. Clone the forked repository to your local machine.
-3. Create a folder of your name-roll number (e.g., `vishesh-241176`) inside `week-k` folder.   
-4. Make your changes in the appropriate week directory and under your name only.
-5. Commit your changes with a descriptive message.
-6. Push your changes to your forked repository.
-7. Open a pull request to the original repository with a title Submission-week-k-name-roll(e.g., Submission-week-1-vishesh-241176) and a short description of your submission.
+# Week 1 Assignment
 
 
-## Week 1
+# Repository Structure
 
-### Assignment:
-Visit: [Assignment Week 1](https://vishesh-kumar-singh.github.io/recall-e/assignments/week1.html).
+```text
+week-1/
+└── bhavna-250275/
+    ├── task-1.pdf
+    ├── README.md
+    └── task-2/
+        ├── q_learning_cliffwalking.py
+        └── rewards_plot.png
+```
 
-Complete all the tasks mentioned in the assignment.
+---
 
-### Instructions for submission:
-1. Make a folder of your name-roll number (e.g., `vishesh-241176`) inside `week-1` folder.
-2. Make your changes under your name folder only.
-3. Commit your changes with a descriptive message.
-4. Push your changes to your forked repository.
-5. Open a pull request to the original repository with a title Submission-week-1-name-roll(e.g., Submission-week-1-vishesh-241176) and a short description of your submission.
+# Task 1: Formulating the World as an MDP
+
+## Scenario: Smart Traffic Signal Control
+
+A smart traffic signal system controls traffic flow at a busy road intersection. The objective is to reduce congestion while maintaining smooth traffic movement and pedestrian safety.
+
+The traffic controller can:
+- Keep the signal green
+- Switch traffic direction
+- Activate pedestrian crossing mode
+
+The goal is to maximize smooth traffic flow and minimize congestion.
+
+---
+
+# State Space (S)
+
+| State | Meaning |
+|---|---|
+| Light | Low traffic |
+| Moderate | Normal traffic |
+| Heavy | High traffic congestion |
+
+\[
+S = \{Light,\ Moderate,\ Heavy\}
+\]
+
+---
+
+# Action Space (A)
+
+| Action | Meaning |
+|---|---|
+| KeepGreen | Continue current green signal |
+| SwitchSignal | Change traffic direction |
+| PedestrianMode | Enable pedestrian crossing |
+
+\[
+A = \{KeepGreen,\ SwitchSignal,\ PedestrianMode\}
+\]
+
+---
+
+# Reward Function (R)
+
+| Situation | Reward |
+|---|---|
+| Smooth traffic flow | +10 |
+| Reduced congestion | +6 |
+| Pedestrian crossing success | +4 |
+| Heavy congestion | -8 |
+
+---
+
+# Task 2: Q-Learning on CliffWalking-v0
+
+## Requirements
+
+Install dependencies using:
+
+```bash
+pip install gymnasium matplotlib numpy
+```
+
+---
+
+# Run the Program
+
+From inside the `task-2` folder:
+
+```bash
+python q_learning_cliffwalking.py
+```
+
+OR from the main assignment folder:
+
+```bash
+python task-2/q_learning_cliffwalking.py
+```
+
+---
+
+# Output
+
+The program generates:
+- rewards_plot.png
+
+---
+
+# Analysis
+
+## Constant High Exploration (ε = 0.5)
+
+- Explores heavily
+- Learns slowly
+- Frequently falls into the cliff
+
+---
+
+## Constant Low Exploration (ε = 0.1)
+
+- Learns safer paths quickly
+- Less random exploration
+- May converge to suboptimal policies
+
+---
+
+## Decaying Exploration
+
+- Starts with high exploration
+- Gradually reduces exploration
+- Learns efficiently
+- Achieves near-optimal performance
+
+---
+
+# Conclusion
+
+- The low exploration agent learns the safe path fastest.
+- The decaying exploration agent performs best overall because it balances:
+  - exploration in early episodes
+  - exploitation in later episodes
