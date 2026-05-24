@@ -1,14 +1,14 @@
 # Week 1 Assignment — Reinforcement Learning
 
-**Name:** [Your Name]  
-**Roll:** [Your Roll Number]
+**Name:** [Nishant Dawale]  
+**Roll:** [250312]
 
 ---
 
 ## Repository Structure
 
 ```
-[YourName]-[YourRoll]/
+[NishantDawale]-[250312]/
 ├── task-1.pdf           # MDP formulation + manual value iteration
 ├── task_2_qlearning.py  # Q-learning implementation (Task 2)
 ├── reward_comparison.png # Generated plot (auto-created by running task_2)
